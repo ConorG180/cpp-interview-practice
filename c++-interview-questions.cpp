@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
-
+#include <cstdlib>
+#include <ctime>
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -70,6 +71,34 @@ namespace circleArea{
     }
 }
 
+// Write a programme which rolls two dice, then
+// gets the values of each of the dice, and 
+// multiplies them to return a final number.
+// This should be random.
+namespace doubleDice {
+
+    int* rollDice(){
+        // static int dices[2];
+        srand(time(nullptr));
+        const int dice1 = rand() % 6 + 1;
+        const int dice2 = rand() % 6 + 1;
+        static int dices[2] = {dice1, dice2};
+        return dices;
+    }
+    
+    void doubleDiceSolution(){
+        std::cout << "Rolling dices" << std::endl;
+        int* rolledDices = rollDice();
+        int dices[2];
+        for(int i = 0; i < 2; i++){
+            dices[i] = rolledDices[i];
+            std::cout << "Dice " << i + 1 << " " << "is " << dices[i] << std::endl;
+        }
+        int dicesTotalValue = dices[0] * dices[1];
+        std::cout << "Total value of dices is " << dicesTotalValue;
+    }
+}
+
 int main(){
 
     // std::cout << "Hello World";
@@ -92,7 +121,8 @@ int main(){
 
     // salesShop::salesShopSolution();
     // temperatureConverter::fahrenheitConverterSolution();
-    circleArea::circleAreaSolution();
+    // circleArea::circleAreaSolution();
+    doubleDice::doubleDiceSolution();
 
 
     return 0;
