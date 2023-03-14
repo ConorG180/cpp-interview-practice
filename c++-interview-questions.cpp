@@ -29,6 +29,27 @@ namespace salesShop {
     }
 }
 
+// Build a small programme that allows the user to enter input,
+// The user should enter a degree in farenheit and then 
+// the user should receive a message back with their value 
+// as farenheit converted into celsius
+namespace temperatureConverter{
+    double fahrenheitConverter(double temp){
+        double convertedCelsiusValue = (temp - 32) * 0.5556;
+        return convertedCelsiusValue;
+    }
+
+    void fahrenheitConverterSolution(){
+        std::cout << "Hello! Please enter your Fahrenheit value: ";
+        double fahrenheitValue;
+        std::cin >> fahrenheitValue;
+
+        double celsiusValue = fahrenheitConverter(fahrenheitValue);
+        std::cout << "Thank you! Your temperature in Celsius is: " << celsiusValue;
+    }
+    double celsiusValue;
+}
+
 int main(){
 
     // std::cout << "Hello World";
@@ -48,7 +69,10 @@ int main(){
 
 
 
-    salesShop::salesShopSolution();
+
+    // salesShop::salesShopSolution();
+    temperatureConverter::fahrenheitConverterSolution();
+
 
     return 0;
 }
