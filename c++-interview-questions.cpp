@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
+ #include <string> //This is used for getline() method
+
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -124,31 +126,53 @@ namespace printStudentProgramme{
     }
 }
 
+/*
+Write a program that asks the user a series of questions
+like street, city, state, and zip code and then prints the user's address using this format:
+
+Street
+
+City, State, ZipCode
+*/
+namespace printAddress{
+    void printAddressSolution(){
+        std::cout << "Enter your address!" <<std::endl;
+        std::cout << std::endl;
+
+        std::cout << "Question1: What's your street?";
+        std::string street;
+        std::getline(std::cin, street);
+
+        std::cout << "Great! Now, what is your City?" << std::endl;
+        std::string city;
+        std::getline(std::cin, city);
+
+        std::cout << "Great! Now, what is your State?" << std::endl;
+        std::string state;
+        std::getline(std::cin, state);
+
+        std::cout << "Thank you! And finally, your zipcode?" << std::endl;
+        std::string zipcode;
+        std::getline(std::cin, zipcode);
+
+        std::cout << "Thank you! So, your address is as follows:" << std::endl;
+        std::cout << std::endl;
+        std::cout << street <<std::endl;
+        std::cout << std::endl;
+        std::cout << city << ", "<< state << ", " << zipcode << ".";
+
+    }
+}
+
 int main(){
 
     // std::cout << "Hello World";
-
-    // Swap 2 variables values without numbers
-
-    // int a = 1;
-    // int b = 2;
-
-    // int temp = a;
-    // a = b;
-    // b = temp;
-
-    // std::cout << a;
-    // std::cout << b;
-
-
-
-
-
     // salesShop::salesShopSolution();
     // temperatureConverter::fahrenheitConverterSolution();
     // circleArea::circleAreaSolution();
     // doubleDice::doubleDiceSolution();
-    printStudentProgramme::printStudentProgrammeSolution(); 
+    // printStudentProgramme::printStudentProgrammeSolution(); 
+    printAddress::printAddressSolution();
 
 
     return 0;
