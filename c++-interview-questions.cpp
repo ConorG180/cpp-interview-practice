@@ -57,7 +57,7 @@ namespace circleArea{
     double getCircleArea(double radius){
         const double pi = 3.14159265358979323846;
         // double area = 2 * pi * radius;
-        double area = pow((radius * pi), 2);
+        double area = pi * pow(radius, 2);
         return area;
     }
 
