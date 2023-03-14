@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
@@ -50,6 +51,25 @@ namespace temperatureConverter{
     double celsiusValue;
 }
 
+// Ask the user to enter the radius of a circle.
+// Return to the console the area of the circle.
+namespace circleArea{
+    double getCircleArea(double radius){
+        const double pi = 3.14159265358979323846;
+        // double area = 2 * pi * radius;
+        double area = pow((radius * pi), 2);
+        return area;
+    }
+
+    void circleAreaSolution(){
+        std::cout << "Hello! Please enter the radius of your circle";
+        double radius;
+        std::cin >> radius;
+        double area = getCircleArea(radius);
+        std::cout << "Thank you! The area of your circle is: " << area;
+    }
+}
+
 int main(){
 
     // std::cout << "Hello World";
@@ -71,7 +91,8 @@ int main(){
 
 
     // salesShop::salesShopSolution();
-    temperatureConverter::fahrenheitConverterSolution();
+    // temperatureConverter::fahrenheitConverterSolution();
+    circleArea::circleAreaSolution();
 
 
     return 0;
