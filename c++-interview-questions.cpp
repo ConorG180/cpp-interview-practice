@@ -2,6 +2,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -85,7 +86,7 @@ namespace doubleDice {
         static int dices[2] = {dice1, dice2};
         return dices;
     }
-    
+
     void doubleDiceSolution(){
         std::cout << "Rolling dices" << std::endl;
         int* rolledDices = rollDice();
@@ -96,6 +97,30 @@ namespace doubleDice {
         }
         int dicesTotalValue = dices[0] * dices[1];
         std::cout << "Total value of dices is " << dicesTotalValue;
+    }
+}
+
+/*
+ Print a programme that makes rows and columns on the ternimal.
+ The programme will contain a courses column and student number column.
+The courses and labels should be aligned to the left, whilst the student
+ numbers should be aligned to the right.
+ The programme should list "Courses" and "Student" aligned to
+ The left in first row.
+ Then, for the second row, it should list "Javascript" with 50 students in the student
+ column. Javascript aligned to left and number aligned to right.
+ Finally, it should have a 3rd row with C++ and 100 students. Follow
+ The same structure for this row as the 2nd row with Javascript.
+*/
+namespace printStudentProgramme{
+    void printStudentProgrammeSolution(){
+        std::string jsCourseName = "JavaScript";
+        int jsCourseStudents = 50;
+        std::string cppCourseName = "C++";
+        int cppCourseStudents = 100;
+        std::cout << std::left <<std::setw(12) << "Course" << "Students" << std::endl;
+        std::cout << std::left << std::setw(10) << jsCourseName << std::setw(10) << std::fixed << std::right << jsCourseStudents << std::endl;
+        std::cout << std::left << std::setw(10) << cppCourseName << std::setw(10) << std::fixed << std::right << cppCourseStudents << std::endl;
     }
 }
 
@@ -122,7 +147,8 @@ int main(){
     // salesShop::salesShopSolution();
     // temperatureConverter::fahrenheitConverterSolution();
     // circleArea::circleAreaSolution();
-    doubleDice::doubleDiceSolution();
+    // doubleDice::doubleDiceSolution();
+    printStudentProgramme::printStudentProgrammeSolution(); 
 
 
     return 0;
