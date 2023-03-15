@@ -163,6 +163,37 @@ namespace printAddress{
 
     }
 }
+namespace basicCalculator{
+    void basicCalculatorSolution(){
+        std::cout << "Enter first number";
+        double first;
+        std::cin >> first;
+
+        std::cout << "Thaml you. Now please enter a second number";
+        double second;
+        std::cin >> second;
+
+        std::cout << "Thank you. Finally, enter your operator (+, -, * or / )";
+        char sign;
+        std::cin >> sign;
+
+        double result;
+        if(sign == '+'){
+            result = first + second;
+        }
+        else if(sign == '-'){
+            result = first - second;
+        }
+        else if (sign == '*'){
+            result = first * second;
+        }
+        else if (sign == '/'){
+            result = first / second;
+        }
+
+        std::cout << result;
+    }
+}
 
 int main(){
 
@@ -172,8 +203,8 @@ int main(){
     // circleArea::circleAreaSolution();
     // doubleDice::doubleDiceSolution();
     // printStudentProgramme::printStudentProgrammeSolution(); 
-    printAddress::printAddressSolution();
-
-
+    // printAddress::printAddressSolution();
+    basicCalculator::basicCalculatorSolution();
+    
     return 0;
 }
