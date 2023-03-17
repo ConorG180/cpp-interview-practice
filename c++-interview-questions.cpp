@@ -195,6 +195,20 @@ namespace basicCalculator{
     }
 }
 
+namespace getFactorial{
+    void getFactorialSolution(){
+        std::cout << "Hello! Please enter a number and the factorial will be printed." << "\n";
+        int number;
+        std::cin >> number;
+
+        int factorial = 1;
+        for(int i = 1; i <= number; i++){
+            factorial *= i;
+        }
+        std::cout << factorial;
+    }
+}
+
 int main(){
 
     // std::cout << "Hello World";
@@ -204,7 +218,9 @@ int main(){
     // doubleDice::doubleDiceSolution();
     // printStudentProgramme::printStudentProgrammeSolution(); 
     // printAddress::printAddressSolution();
-    basicCalculator::basicCalculatorSolution();
-    
+    // basicCalculator::basicCalculatorSolution();
+    getFactorial::getFactorialSolution();
+
+
     return 0;
 }
