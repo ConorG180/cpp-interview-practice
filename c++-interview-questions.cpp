@@ -274,6 +274,21 @@ namespace numberGuess{
         }
     }
 
+namespace printStars{
+    void printStarsSolution(){
+        int rows;
+        std::cout << "Enter number of rows: ";
+        std::cin >> rows;
+
+        for(int i = 1; i <= rows; i++){
+            for(int j = 1; j <= i; j++){
+                std::cout << "*";
+            }
+            std::cout << "\n";
+        }
+    }
+}
+
 int main(){
 
     // std::cout << "Hello World";
@@ -286,7 +301,8 @@ int main(){
     // basicCalculator::basicCalculatorSolution();
     // getFactorial::getFactorialSolution();
     // getAverageTemp::getAverageTempSolution();
-    numberGuess::numberGuessSolution(); 
+    // numberGuess::numberGuessSolution(); 
+    printStars:: printStarsSolution();
 
 
     return 0;
