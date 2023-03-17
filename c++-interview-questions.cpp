@@ -212,10 +212,10 @@ namespace getAverageTemp{
     void getAverageTempSolution(){
 
         // Solution 1 (easiest)
-        int temperatures[] = {5, 3, 10, 18};
+        int temperatures[] = {5, 3, 10, 17};
         int temperaturesLength = sizeof(temperatures) / sizeof(int);
         int sum = 0;
-        int averageTemp;
+        double averageTemp;
 
         // Solution 1 for loop (easiest)
         for(int temp: temperatures){
@@ -227,7 +227,7 @@ namespace getAverageTemp{
         //     sum += temperatures[i];
         // }
 
-        averageTemp = sum / temperaturesLength;
+        averageTemp = static_cast<double>(sum) / temperaturesLength;
         std::cout << averageTemp;
     }
 
