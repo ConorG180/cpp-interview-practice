@@ -208,6 +208,30 @@ namespace getFactorial{
         std::cout << factorial;
     }
 }
+namespace getAverageTemp{
+    void getAverageTempSolution(){
+
+        // Solution 1 (easiest)
+        int temperatures[] = {5, 3, 10, 18};
+        int temperaturesLength = sizeof(temperatures) / sizeof(int);
+        int sum = 0;
+        int averageTemp;
+
+        // Solution 1 for loop (easiest)
+        for(int temp: temperatures){
+            sum += temp;
+        }
+
+        // Solution 2 for loop
+        // for(int i = 0; i < temperaturesLength; i++){
+        //     sum += temperatures[i];
+        // }
+
+        averageTemp = sum / temperaturesLength;
+        std::cout << averageTemp;
+    }
+
+}
 
 int main(){
 
@@ -219,7 +243,8 @@ int main(){
     // printStudentProgramme::printStudentProgrammeSolution(); 
     // printAddress::printAddressSolution();
     // basicCalculator::basicCalculatorSolution();
-    getFactorial::getFactorialSolution();
+    // getFactorial::getFactorialSolution();
+    getAverageTemp::getAverageTempSolution();
 
 
     return 0;
