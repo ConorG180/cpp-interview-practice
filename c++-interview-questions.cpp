@@ -230,8 +230,49 @@ namespace getAverageTemp{
         averageTemp = static_cast<double>(sum) / temperaturesLength;
         std::cout << averageTemp;
     }
-
 }
+namespace numberGuess{
+    void numberGuessSolution(){
+        int maxNumber = 20;
+        int secretNumber = 7;
+        int guess;
+        std::cout << "I have declared a secret number from 1-20. Guess it! It's between 1 and " << maxNumber << std::endl;
+
+        bool isGuessValid = false;
+        char playAgain;
+        while(!isGuessValid){
+            std::cin >> guess;
+            isGuessValid = (guess >= 1 && guess <= 20) ? true : false;
+            if(isGuessValid){
+                if(secretNumber == guess){
+                    std::cout << "Correct! Well done!";
+                    break;
+                }
+                else{
+                    while(playAgain != 'y' || playAgain != 'n'){
+                    std::cout << "incorrect! Play again? (Type y for yes or n for no)";
+                    std::cin >> playAgain;
+                    if (playAgain =='y' || playAgain == 'n'){
+                        break;
+                    }
+                    }
+                }
+            }
+            else{
+                std::cout << "I said BETWEEN 1 AND " << maxNumber << "!!" << std::endl;
+            }
+
+            if(playAgain == 'y'){
+                isGuessValid = false;
+                std::cout << "Ok, guess again" << "\n";
+            }
+            else if (playAgain == 'n'){
+                break;
+            }
+        }
+
+        }
+    }
 
 int main(){
 
@@ -244,7 +285,8 @@ int main(){
     // printAddress::printAddressSolution();
     // basicCalculator::basicCalculatorSolution();
     // getFactorial::getFactorialSolution();
-    getAverageTemp::getAverageTempSolution();
+    // getAverageTemp::getAverageTempSolution();
+    numberGuess::numberGuessSolution(); 
 
 
     return 0;
