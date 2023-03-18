@@ -3,8 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
- #include <string> //This is used for getline() method
-
+#include <string> //This is used for getline() method
+#include <iterator>
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -289,6 +289,26 @@ namespace printStars{
     }
 }
 
+void swap(int &num1, int &num2){
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+void bubbleSortRecursive(int *arr, int arrSize){
+    for(int i = 1; i < arrSize; i++){
+        if(arr[i] > arr[i-1]){
+            swap(arr[i-1], arr[i]);
+        }
+        else{
+            continue;
+        }
+    }
+    for(int i = 1; i < arrSize; i++){
+        if (!(arr[i-1] >= arr[i])){
+            bubbleSortRecursive(arr, arrSize);
+        }
+}
+}
 int main(){
 
     // std::cout << "Hello World";
@@ -302,7 +322,21 @@ int main(){
     // getFactorial::getFactorialSolution();
     // getAverageTemp::getAverageTempSolution();
     // numberGuess::numberGuessSolution(); 
-    printStars:: printStarsSolution();
+    // printStars:: printStarsSolution();
+
+    //*** BUBBLESORT SOLUTIONS***
+
+    int arr[] = {23, 45, 12, 3, 21, 634, 344, 2, 234, 123};
+    int arrSize = sizeof(arr) / sizeof(int);
+    for(int i = 0; i < arrSize; i++){
+        std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
+    bubbleSortRecursive(arr, arrSize);
+    for(int i = 0; i < arrSize; i++){
+        std::cout << arr[i] << " ";
+    }
+
 
 
     return 0;

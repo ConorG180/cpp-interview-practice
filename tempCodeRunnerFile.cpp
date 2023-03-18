@@ -1,3 +1,3 @@
-     // for(int temp: temperatures){
-        //     sum += temp;
-        // }
+    for(int i = 0; i < arrSize; i++){
+        std::cout << arr[i] << " ";
+    }
