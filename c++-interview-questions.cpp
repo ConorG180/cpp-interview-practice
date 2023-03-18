@@ -326,6 +326,38 @@ namespace printFromArrayPointer{
     }
 }
 
+namespace dynamicallySizeArrays{
+    void dynamicallySizeArraysSolution(){
+    int* numbers = new int[5];
+    int capacity = 5;
+    int entries = 0;
+
+    while(true){
+        std::cout << "Enter a number:" << "\n";
+        std::cin >> numbers[entries];
+        if(std::cin.fail()){
+            break;
+        }
+        entries++;
+        if(entries == capacity){
+            capacity += 1;
+            int* tempArray = new int[capacity];
+            for(int i = 0; i < entries; i++){
+                tempArray[i] = numbers[i];
+            }
+            delete[] numbers; 
+            numbers = tempArray;
+        }
+    }
+    
+    for(int i = 0; i < entries; i++){
+        std::cout << numbers[i] << "\n";
+    }
+    delete[] numbers;
+
+    }
+}
+
 int main(){
     // std::cout << "Hello World";
     // salesShop::salesShopSolution();
@@ -339,10 +371,11 @@ int main(){
     // getAverageTemp::getAverageTempSolution();
     // numberGuess::numberGuessSolution(); 
     // printStars:: printStarsSolution();
+    dynamicallySizeArrays::dynamicallySizeArraysSolution();
 
-    int numbers[] = {10, 20, 30};
-    int size = sizeof(numbers) / sizeof(int);
-    printFromArrayPointer::printFromArrayPointerSolution(numbers, size);
+    // int numbers[] = {10, 20, 30};
+    // int size = sizeof(numbers) / sizeof(int);
+    // printFromArrayPointer::printFromArrayPointerSolution(numbers, size);
     
     //*** BUBBLESORT SOLUTIONS***
 
@@ -356,7 +389,6 @@ int main(){
     // for(int i = 0; i < arrSize; i++){
     //     std::cout << arr[i] << " ";
     // }
-
 
     return 0;
 }
