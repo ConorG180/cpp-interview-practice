@@ -1,3 +1,3 @@
-    for(int i = 0; i < arrSize; i++){
-        std::cout << arr[i] << " ";
-    }
+
+    int size = sizeof(numbers) / sizeof(int);
+    printFromArrayPointer::printFromArrayPointerSolution(numbers, size);

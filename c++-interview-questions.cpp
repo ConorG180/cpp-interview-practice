@@ -309,8 +309,24 @@ void bubbleSortRecursive(int *arr, int arrSize){
         }
 }
 }
-int main(){
+/*
+Given an array of numbers, make a pointer which points
+To the last element of the array. Then, use a while loop to
+print the numbers out in reverse order. E.g. if array is
+[10,20,30], then 30 20 10 should be output on console.  
+*/
 
+namespace printFromArrayPointer{
+    void printFromArrayPointerSolution(int* numbers, int size){
+        int* lastptr = &numbers[size - 1];
+        while(lastptr >= numbers){
+            std::cout << *lastptr << std::endl;
+            lastptr--;
+        }
+    }
+}
+
+int main(){
     // std::cout << "Hello World";
     // salesShop::salesShopSolution();
     // temperatureConverter::fahrenheitConverterSolution();
@@ -324,19 +340,22 @@ int main(){
     // numberGuess::numberGuessSolution(); 
     // printStars:: printStarsSolution();
 
+    int numbers[] = {10, 20, 30};
+    int size = sizeof(numbers) / sizeof(int);
+    printFromArrayPointer::printFromArrayPointerSolution(numbers, size);
+    
     //*** BUBBLESORT SOLUTIONS***
 
-    int arr[] = {23, 45, 12, 3, 21, 634, 344, 2, 234, 123};
-    int arrSize = sizeof(arr) / sizeof(int);
-    for(int i = 0; i < arrSize; i++){
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-    bubbleSortRecursive(arr, arrSize);
-    for(int i = 0; i < arrSize; i++){
-        std::cout << arr[i] << " ";
-    }
-
+    // int arr[] = {23, 45, 12, 3, 21, 634, 344, 2, 234, 123};
+    // int arrSize = sizeof(arr) / sizeof(int);
+    // for(int i = 0; i < arrSize; i++){
+    //     std::cout << arr[i] << " ";
+    // }
+    // std::cout << "\n";
+    // bubbleSortRecursive(arr, arrSize);
+    // for(int i = 0; i < arrSize; i++){
+    //     std::cout << arr[i] << " ";
+    // }
 
 
     return 0;
