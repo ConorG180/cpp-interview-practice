@@ -1,3 +1,6 @@
+#ifndef ADDRESS_H
+#define ADDRESS_H
+
 #include <string>
 
 struct Address {
@@ -5,3 +8,5 @@ struct Address {
     std::string city;
     std::string zipCode;
 };
+
+#endif // ADDRESS_H
