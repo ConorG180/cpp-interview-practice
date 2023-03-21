@@ -7,6 +7,11 @@
 #include <iterator>
 #include <typeinfo>  // This is used for typeId(dataType method) e.g. typeId(int)
 
+// Some notes / important methods:
+// you can use std::stod, std::stoi, std::stof etc to 
+// convert strings to numbers. You can use the std::to_string(x) method.
+
+
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -404,6 +409,9 @@ int main(){
     // printStars:: printStarsSolution();
     // dynamicallySizeArrays::dynamicallySizeArraysSolution();
 
+    // std::string str = "gehjoej34gj2gdrgd3";
+    // std::cout << std::boolalpha << isStringValid(str);
+
     // int numbers[] = {10, 20, 30};
     // int size = sizeof(numbers) / sizeof(int);
     // printFromArrayPointer::printFromArrayPointerSolution(numbers, size);
@@ -413,8 +421,7 @@ int main(){
     // int size = sizeof(arr) / sizeof(int);
     // getSecondLargest(arr, size);
 
-    std::string str = "gehjoej34gj2gdrgd3";
-    std::cout << std::boolalpha << isStringValid(str);
+
     
     //*** BUBBLESORT SOLUTIONS***
 
@@ -428,8 +435,6 @@ int main(){
     // for(int i = 0; i < arrSize; i++){
     //     std::cout << arr[i] << " ";
     // }
-
-
 
     return 0;
 }
