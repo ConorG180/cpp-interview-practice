@@ -1,5 +1,7 @@
+#include <string>
+
 struct Address {
-    string name;
-    int age;
-    string address;
+    std::string street;
+    std::string city;
+    std::string zipCode;
 };
