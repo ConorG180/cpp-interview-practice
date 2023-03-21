@@ -358,6 +358,19 @@ namespace dynamicallySizeArrays{
     }
 }
 
+void getSecondLargest(int *arr, int arrSize){
+    int largest = 0;
+    int secondLargest = 0;
+    for(int i = 0; i < arrSize; i++){
+        if(largest < arr[i]){
+            largest = arr[i];
+        }
+        if(arr[i] < largest && arr[i] > secondLargest){
+            secondLargest = arr[i];
+        }
+    }
+    std::cout << largest << "\n" << secondLargest << "\n" << arr << "\n";
+}
 int main(){
     // std::cout << "Hello World";
     // salesShop::salesShopSolution();
@@ -371,7 +384,7 @@ int main(){
     // getAverageTemp::getAverageTempSolution();
     // numberGuess::numberGuessSolution(); 
     // printStars:: printStarsSolution();
-    dynamicallySizeArrays::dynamicallySizeArraysSolution();
+    // dynamicallySizeArrays::dynamicallySizeArraysSolution();
 
     // int numbers[] = {10, 20, 30};
     // int size = sizeof(numbers) / sizeof(int);
@@ -390,5 +403,8 @@ int main(){
     //     std::cout << arr[i] << " ";
     // }
 
+    int arr[] = {23, 45, 12, 3, 21, 634, 344, 459, 2, 234, 123};
+    int size = sizeof(arr) / sizeof(int);
+    getSecondLargest(arr, size);
     return 0;
 }
