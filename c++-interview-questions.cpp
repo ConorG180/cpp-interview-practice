@@ -7,6 +7,9 @@
 #include <iterator>
 #include <typeinfo>  // This is used for typeId(dataType method) e.g. typeId(int)
 
+// IMPORTED STRUCTURES:
+#include "structures/address.h"
+#include "structures/person.h"
 // Some notes / important methods:
 // you can use std::stod, std::stoi, std::stof etc to 
 // convert strings to numbers. You can use the std::to_string(x) method.
@@ -435,6 +438,12 @@ int main(){
     // for(int i = 0; i < arrSize; i++){
     //     std::cout << arr[i] << " ";
     // }
+
+    Person myPerson;
+    myPerson = {{"Johnstown road", "Dublin", "D11 NC821"}, "John", 39, };
+
+    std::cout << myPerson.address.street << "\n" << myPerson.address.city << "\n" << myPerson.address.zipCode
+        << "\n" << myPerson.name << "\n" << myPerson.age; 
 
     return 0;
 }
