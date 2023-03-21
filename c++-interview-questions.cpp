@@ -5,6 +5,8 @@
 #include <iomanip>
 #include <string> //This is used for getline() method
 #include <iterator>
+#include <typeinfo>  // This is used for typeId(dataType method) e.g. typeId(int)
+
 // A store makes $95000 per year. They get charged 4%
 // State tax  and 2 % county tax. Write a programme that
 // shows total sales, state tax, county tax, total tax and 
@@ -371,6 +373,22 @@ void getSecondLargest(int *arr, int arrSize){
     }
     std::cout << largest << "\n" << secondLargest << "\n" << arr << "\n";
 }
+
+bool isStringValid(std::string s){
+    int intCount = 0;
+    int charCount = 0;
+    for(int i = 0; i < s.length(); i++){
+        intCount = (std::isdigit(s[i])) ? intCount + 1 : intCount;
+        charCount = (std::isalpha(s[i])) ? charCount + 1 : charCount;
+
+        //For efficiency. Stop when check is complete.
+        if(intCount >= 4 && charCount >= 2){
+            break;
+        }
+    }
+    return (intCount >= 4 && charCount >=2) ? true : false;
+}
+
 int main(){
     // std::cout << "Hello World";
     // salesShop::salesShopSolution();
@@ -389,6 +407,14 @@ int main(){
     // int numbers[] = {10, 20, 30};
     // int size = sizeof(numbers) / sizeof(int);
     // printFromArrayPointer::printFromArrayPointerSolution(numbers, size);
+
+    
+    // int arr[] = {23, 45, 12, 3, 21, 634, 344, 2, 234, 123};
+    // int size = sizeof(arr) / sizeof(int);
+    // getSecondLargest(arr, size);
+
+    std::string str = "gehjoej34gj2gdrgd3";
+    std::cout << std::boolalpha << isStringValid(str);
     
     //*** BUBBLESORT SOLUTIONS***
 
@@ -403,8 +429,7 @@ int main(){
     //     std::cout << arr[i] << " ";
     // }
 
-    int arr[] = {23, 45, 12, 3, 21, 634, 344, 459, 2, 234, 123};
-    int size = sizeof(arr) / sizeof(int);
-    getSecondLargest(arr, size);
+
+
     return 0;
 }
